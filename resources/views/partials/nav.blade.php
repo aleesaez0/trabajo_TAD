@@ -9,21 +9,7 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('personas.index') }}">Personas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bibliotecarios.index') }}">Bibliotecarios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bibliotecas.index') }}">Bibliotecas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('libros.index') }}">Libros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios</a>
-                </li>
+                
             </ul>
         </div>
     </div>
