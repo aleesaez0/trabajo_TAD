@@ -4,8 +4,8 @@
     <!-- Hero Section -->
     <section class="bg-light py-5 text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold text-danger">Bienvenido a eStore</h1>
-            <p class="lead text-muted mb-4">La mejor tienda online para tus compras. Explora nuestros productos, añade al
+            <h1 class="display-4 fw-bold text-danger">Bienvenido a sexToys</h1>
+            <p class="lead text-muted mb-4">La mejor tienda online de juguetes sexuales. Explora nuestros productos, añade al
                 carrito y realiza pedidos fácilmente.</p>
             <a href="{{ route('productos.index') }}" class="btn btn-danger btn-lg">Ver Productos</a>
         </div>
