@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="{{ url('/') }}">eStore</a>
+    <a class="navbar-brand fw-bold" href="{{ url('/') }}">eStore</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,12 +8,11 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         @auth
-      <!-- Enlaces comunes -->
       <li class="nav-item"><a class="nav-link" href="{{ route('productos.index') }}">Productos</a></li>
       <li class="nav-item"><a class="nav-link" href="{{ route('carro.ver') }}">Carro</a></li>
 
       @if(auth()->user()->cliente)
-      <li class="nav-item"><a class="nav-link" href="{{ route('pedidos.index') }}">Mis pedidos</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ route('pedidos.index') }}">Mis Pedidos</a></li>
     @endif
 
       @if(auth()->user()->administrador)
