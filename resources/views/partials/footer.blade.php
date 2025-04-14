@@ -1,5 +1,5 @@
-<footer class="footer">
+<footer class="bg-light text-center py-4 mt-5 shadow-sm">
     <div class="container">
-        <p class="mb-0">&copy; 2025 Proyecto EPD3 TAD. Todos los derechos reservados.</p>
+        <p class="mb-0">&copy; {{ date('Y') }} Tu Tienda Laravel. Todos los derechos reservados.</p>
     </div>
 </footer>

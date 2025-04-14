@@ -84,3 +84,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - phpMyAdmin: http:localhost:8081
 
 # UML: https://lucid.app/lucidchart/31486c1a-5ef8-4f29-97af-a526dfaeb779/edit?viewport_loc=-260%2C76%2C2226%2C1035%2CHWEp-vi-RSFO&invitationId=inv_428ce356-88f5-4caa-94b6-aee5e298b081
+
+
+# USUARIOS
+proyectotad55+usuario1@gmail.com - 12345678Usuario1
+
+proyectotad55+usuario2@gmail.com - 12345678Usuario2

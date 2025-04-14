@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Inicio')
-
 @section('content')
-    <div class="welcome-section text-center py-5">
-        <h1 class="display-4">Bienvenido al Proyecto EPD3 TAD</h1>
-        <p class="lead">Gestiona tu biblioteca de manera eficiente con nuestro sistema integrado.</p>
-    </div>
+<div class="container text-center py-5">
+    <h1 class="display-4">Bienvenido a tu Tienda Online</h1>
+    <p class="lead">Explora nuestros productos y disfruta de tus compras.</p>
+    <a href="{{ route('productos.index') }}" class="btn btn-primary mt-3">Ver productos</a>
+</div>
 @endsection
