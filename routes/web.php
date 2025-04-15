@@ -8,6 +8,7 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PedidosAdminController;
+use App\Http\Controllers\Cliente\ClienteDashboardController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
@@ -50,3 +51,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 });
 Route::get('/pedidos/{pedido}', [PedidoController::class, 'show'])->middleware('auth')->name('pedidos.show');
 Route::get('/admin/pedidos/{pedido}', [PedidosAdminController::class, 'show'])->middleware('auth')->name('admin.pedidos.show');
+
+Route::get('/cliente/dashboard', [ClienteDashboardController::class, 'index'])
+    ->middleware('auth')
+    ->name('cliente.dashboard');
