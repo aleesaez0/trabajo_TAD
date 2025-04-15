@@ -1,50 +1,74 @@
+
 @extends('layouts.app')
 
-@section('content')
-    <!-- Hero Section -->
-    <section class="bg-light py-5 text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold text-danger">Bienvenido a sexToys</h1>
-            <p class="lead text-muted mb-4">La mejor tienda online de juguetes sexuales. Explora nuestros productos, añade al
-                carrito y realiza pedidos fácilmente.</p>
-            <a href="{{ route('productos.index') }}" class="btn btn-danger btn-lg">Ver Productos</a>
-        </div>
-    </section>
+@section('title', 'Bienvenido a eStore')
 
-    <!-- Características -->
-    <section class="py-5 border-top">
-        <div class="container">
-            <div class="row g-4 text-center">
-                <div class="col-md-4">
-                    <div class="p-4 shadow-sm bg-white rounded">
-                        <i class="bi bi-truck display-5 text-danger mb-3"></i>
-                        <h5>Envío Rápido</h5>
-                        <p class="text-muted">Recibe tus productos en tiempo récord a cualquier parte.</p>
+@section('content')
+
+<!--====== Header Style 1 Part Start ======-->
+<section class="header-style-1">
+    <div class="header-big">
+        <div class="header-items-active">
+            <div class="single-header-item bg_cover" style="background-image: url({{ asset('assets/images/header-1/header-big-1.jpg') }});">
+                <div class="header-item-content">
+                    <h3 class="title">Don’t say it with flowers: A NOMOS watch is a gift that lasts</h3>
+                    <a href="javascript:void(0)" class="link">Our Valentine's Day collection</a>
+                </div>
+            </div>
+            <div class="single-header-item bg_cover" style="background-image: url({{ asset('assets/images/header-1/header-big-2.jpg') }});">
+                <div class="header-item-content">
+                    <h3 class="title">Don’t say it with flowers: A NOMOS watch is a gift that lasts</h3>
+                    <a href="javascript:void(0)" class="link">Our Valentine's Day collection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== Header Style 1 Part Ends ======-->
+
+<!--====== Content Card Style 4 Part Start ======-->
+<section class="content-card-style-4 pt-70 pb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="single-content mt-15 text-center">
+                    <div class="content-icon">
+                        <i class="mdi mdi-truck-fast"></i>
+                    </div>
+                    <div class="content-content">
+                        <h4 class="title"><a href="#">Envío en 2 horas</a></h4>
+                        <p>Disponible en las principales ciudades</p>
+                        <a href="#" class="more">Más información</a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-4 shadow-sm bg-white rounded">
-                        <i class="bi bi-shield-lock display-5 text-danger mb-3"></i>
-                        <h5>Compra Segura</h5>
-                        <p class="text-muted">Tus datos están protegidos y tus pagos son seguros.</p>
+            </div>
+            <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="single-content mt-15 text-center">
+                    <div class="content-icon">
+                        <i class="mdi mdi-message-text"></i>
+                    </div>
+                    <div class="content-content">
+                        <h4 class="title"><a href="#">¿Necesitas ayuda?</a></h4>
+                        <p>Contacta por chat o llámanos</p>
+                        <a href="#" class="more">Contáctanos</a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-4 shadow-sm bg-white rounded">
-                        <i class="bi bi-stars display-5 text-danger mb-3"></i>
-                        <h5>Calidad Garantizada</h5>
-                        <p class="text-muted">Productos de primeras marcas con garantía incluida.</p>
+            </div>
+            <div class="col-lg-4 col-md-7 col-sm-8">
+                <div class="single-content mt-15 text-center">
+                    <div class="content-icon">
+                        <i class="mdi mdi-ticket-percent"></i>
+                    </div>
+                    <div class="content-content">
+                        <h4 class="title"><a href="#">Financia tus compras</a></h4>
+                        <p>Consigue ofertas especiales y cashback</p>
+                        <a href="#" class="more">Más información</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!--====== Content Card Style 4 Part Ends ======-->
 
-    <!-- CTA -->
-    <section class="bg-danger text-white py-5 text-center">
-        <div class="container">
-            <h2 class="mb-3">¿Listo para comprar?</h2>
-            <a href="{{ route('productos.index') }}" class="btn btn-outline-light btn-lg">Explorar Productos</a>
-        </div>
-    </section>
 @endsection

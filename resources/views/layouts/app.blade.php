@@ -1,36 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
 
+{{-- resources/views/layouts/app.blade.php --}}
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>@yield('title', 'sexToys')</title>
+    <meta charset="utf-8">
+    <title>@yield('title', 'eStore')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
 
-    <!-- Iconos -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Animaciones -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-
-    <!-- Estilos personalizados -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <!-- CSS de la plantilla eStore -->
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/LineIcons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Navbar -->
     @include('components.nav')
 
-    <main class="py-4 min-vh-100">
+    <!-- Contenido -->
+    <main>
         @yield('content')
     </main>
 
+    <!-- Footer -->
     @include('partials.footer')
 
-    <!-- Bootstrap JS -->
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/modernizr-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-vj-accordion-steps.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.form-validator.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.formatter.min.js') }}"></script>
+    <script src="{{ asset('assets/js/count-up.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
-
 </html>

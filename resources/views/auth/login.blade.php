@@ -1,33 +1,48 @@
+
 @extends('layouts.app')
 
+@section('title', 'Iniciar sesión')
+
 @section('content')
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h4 class="mb-4 text-center text-danger">Iniciar Sesión</h4>
+<section class="login-area pt-100 pb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="login-form box-style">
+                    <h3 class="mb-30 text-center">Iniciar sesión</h3>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="mb-3">
-                            <label class="form-label">Correo electrónico</label>
-                            <input type="email" name="email" class="form-control" required autofocus>
+
+                        <div class="single-input">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="Introduce tu correo" required autofocus>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contraseña</label>
-                            <input type="password" name="password" class="form-control" required>
+
+                        <div class="single-input">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div class="form-check">
-                                <input type="checkbox" name="remember" class="form-check-input" id="remember">
-                                <label class="form-check-label" for="remember">Recordarme</label>
+
+                        <div class="d-flex justify-content-between flex-wrap mt-20">
+                            <div class="single-checkbox">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Recuérdame</label>
+                            </div>
+                            <div class="forgot">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-danger w-100">Entrar</button>
+
+                        <div class="login-btn mt-30">
+                            <button class="main-btn primary-btn w-100" type="submit">Entrar</button>
+                        </div>
+
+                        <p class="text-center mt-20">¿No tienes cuenta?
+                            <a href="{{ route('register') }}">Crear cuenta</a>
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
