@@ -9905,7 +9905,7 @@ p {
     }
 }
 .header-style-1 .header-big {
-    width: 66.67%;
+    width: 100%;
 }
 @media (max-width: 767px) {
     .header-style-1 .header-big {
