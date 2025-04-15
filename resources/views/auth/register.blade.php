@@ -1,35 +1,49 @@
+
 @extends('layouts.app')
 
+@section('title', 'Crear cuenta')
+
 @section('content')
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h4 class="mb-4 text-center text-danger">Crear Cuenta</h4>
+<section class="signup-area pt-100 pb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="signup-form box-style">
+                    <h3 class="mb-30 text-center">Crear una cuenta</h3>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="mb-3">
-                            <label class="form-label">Nombre completo</label>
-                            <input type="text" name="name" class="form-control" required autofocus>
+
+                        <div class="single-input">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Introduce tu nombre completo" required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Correo electrónico</label>
-                            <input type="email" name="email" class="form-control" required>
+
+                        <div class="single-input">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="Introduce tu correo" required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contraseña</label>
-                            <input type="password" name="password" class="form-control" required>
+
+                        <div class="single-input">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" placeholder="Crea una contraseña" required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Confirmar contraseña</label>
-                            <input type="password" name="password_confirmation" class="form-control" required>
+
+                        <div class="single-input">
+                            <label for="password_confirmation">Confirmar contraseña</label>
+                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Repite la contraseña" required>
                         </div>
-                        <button type="submit" class="btn btn-danger w-100">Registrarse</button>
+
+                        <div class="login-btn mt-30">
+                            <button class="main-btn primary-btn w-100" type="submit">Registrarse</button>
+                        </div>
+
+                        <p class="text-center mt-20">¿Ya tienes cuenta?
+                            <a href="{{ route('login') }}">Inicia sesión</a>
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
