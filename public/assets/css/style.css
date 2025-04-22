@@ -11404,3 +11404,24 @@ footer a:hover {
         word-break: break-word;
     }
 }
+
+.img-wrapper {
+    height: 200px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.descripcion {
+    position: relative;
+}
+
+.ver-mas {
+    color: #007bff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
