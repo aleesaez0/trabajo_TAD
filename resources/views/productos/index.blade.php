@@ -30,13 +30,6 @@
                                         <button class="btn btn-sm btn-danger">Eliminar</button>
                                     </form>
                                 </td>
-                                <td>
-                                    <form action="{{ route('carro.agregar', $producto) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        <input type="hidden" name="cantidad" value="1">
-                                        <button class="btn btn-sm btn-success">Añadir al carrito</button>
-                                    </form>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>
