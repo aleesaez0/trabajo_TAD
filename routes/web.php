@@ -30,7 +30,6 @@ Route::view('/dashboard', 'auth.dashboard')->middleware('auth');
 Route::resource('productos', ProductoController::class)->middleware('auth');
 Route::resource('clientes', ClienteController::class)->middleware('auth');
 Route::resource('administradores', AdministradorController::class)->middleware('auth');
-Route::resource('carros', CarroController::class)->middleware('auth');
 Route::resource('lineas_carro', LineaCarroController::class)->middleware('auth');
 Route::resource('pedidos', PedidoController::class)->middleware('auth');
 

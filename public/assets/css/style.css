@@ -11350,3 +11350,57 @@ footer a {
 footer a:hover {
     color: #ffffff;
 }
+
+@media (max-width: 767.98px) {
+    .checkout-table table {
+        display: block;
+        width: 100%;
+    }
+
+    .checkout-table thead {
+        display: none;
+    }
+
+    .checkout-table tbody,
+    .checkout-table tr,
+    .checkout-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .checkout-table tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: #fff;
+    }
+
+    .checkout-product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-cart {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-thumb img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .checkout-quantity,
+    .checkout-price,
+    td:last-child {
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .product-content p {
+        word-break: break-word;
+    }
+}

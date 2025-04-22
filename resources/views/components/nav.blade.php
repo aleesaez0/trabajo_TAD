@@ -1,7 +1,6 @@
 <div class="navigation">
   <header class="navbar-style-7 position-relative">
     <div class="container">
-      <!-- navbar mobile Start -->
       <div class="navbar-mobile d-lg-none">
         <div class="row align-items-center">
           <div class="col-3">
@@ -81,7 +80,6 @@
         <li><a href="{{ route('admin.pedidos.index') }}">Pedidos</a></li>
         <li><a href="{{ route('productos.index') }}">Productos</a></li>
         <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
-        <li><a href="{{ route('carros.index') }}">Carros</a></li>
       @endif
           <li>
             <form method="POST" action="{{ route('logout') }}">
