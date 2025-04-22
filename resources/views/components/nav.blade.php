@@ -15,14 +15,18 @@
               <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo.svg') }}" alt="Logo"></a>
             </div>
           </div>
-          <div class="col-3">
-            <div class="navbar-cart">
-              <a class="icon-btn primary-icon-text icon-text-btn" href="{{ route('carro.ver') }}">
-                <img src="{{ asset('assets/images/icon-svg/cart-1.svg') }}" alt="Icon">
-                <span class="icon-text text-style-1">88</span>
-              </a>
-            </div>
-          </div>
+          @if(auth()->user()->cliente)
+        <div class="col-3">
+        <div class="navbar-cart">
+          <a class="icon-btn primary-icon-text icon-text-btn" href="{{ route('carro.ver') }}">
+          <img src="{{ asset('assets/images/icon-svg/cart-1.svg') }}" alt="Icon">
+          <span class="icon-text text-style-1">
+            {{ auth()->user()->cliente->carro?->lineas->sum('cantidad') ?? 0 }}
+          </span>
+          </a>
+        </div>
+        </div>
+      @endif
         </div>
       </div>
     </div>

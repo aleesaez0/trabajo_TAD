@@ -1,1 +1,0 @@
-{{-- Este archivo puede quedar vacío si estás usando components.nav --}}
