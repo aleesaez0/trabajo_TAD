@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Bienvenido a eStore')
+@section('title', 'Bienvenido a sexToys')
 
 @section('content')
 

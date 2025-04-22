@@ -78,7 +78,7 @@
 
         <div class="footer-copyright text-center">
             <p>
-                &copy; {{ date('Y') }} <a href="{{ url('/') }}">eStore</a>. Todos los derechos reservados.
+                &copy; {{ date('Y') }} <a href="{{ url('/') }}">sexToys</a>. Todos los derechos reservados.
             </p>
         </div>
     </div>

@@ -1,16 +1,13 @@
 
-{{-- resources/views/layouts/app.blade.php --}}
 <!doctype html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>@yield('title', 'eStore')</title>
+    <title>@yield('title', 'sexToys')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
 
-    <!-- CSS de la plantilla eStore -->
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/LineIcons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/materialdesignicons.min.css') }}">
@@ -22,7 +19,6 @@
 </head>
 
 <body>
-    <!-- Preloader -->
     <div class="preloader">
         <div class="loader">
             <div class="ytp-spinner">
@@ -40,18 +36,14 @@
         </div>
     </div>
 
-    <!-- Navbar -->
     @include('components.nav')
 
-    <!-- Contenido -->
     <main>
         @yield('content')
     </main>
 
-    <!-- Footer -->
     @include('partials.footer')
 
-    <!-- Scripts -->
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-3.5.1.min.js') }}"></script>

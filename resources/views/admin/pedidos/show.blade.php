@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-5">
-        <h2 class="mb-4 text-center">Detalle del Pedido #{{ $pedido->id }}</h2>
+        <h2 class="mb-4 text-center">Detalles del Pedido #{{ $pedido->id }}</h2>
 
         <div class="card mb-4">
             <div class="card-body">
