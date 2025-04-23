@@ -12,16 +12,24 @@
           </div>
           <div class="col-6">
             <div class="mobile-logo text-center">
-              <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo.svg') }}" alt="Logo"></a>
+              <a href="{{ url('/') }}">
+                <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo">
+              </a>
             </div>
           </div>
-          @if(auth()->user()->cliente)
+
+          @php
+      $user = auth()->user();
+      $cliente = $user?->cliente;
+      @endphp
+
+          @if($cliente)
         <div class="col-3">
         <div class="navbar-cart">
           <a class="icon-btn primary-icon-text icon-text-btn" href="{{ route('carro.ver') }}">
           <img src="{{ asset('assets/images/icon-svg/cart-1.svg') }}" alt="Icon">
           <span class="icon-text text-style-1">
-            {{ auth()->user()->cliente->carro?->lineas->sum('cantidad') ?? 0 }}
+            {{ $cliente->carro?->lineas->sum('cantidad') ?? 0 }}
           </span>
           </a>
         </div>
@@ -52,7 +60,7 @@
               <ul class="navbar-top-link">
                 <li>
                   @auth
-            <a href="#"><i class="mdi mdi-account"></i> {{ auth()->user()->name }}</a>
+            <a href="#"><i class="mdi mdi-account"></i> {{ $user->name }}</a>
           @else
         <a href="{{ route('login') }}"><i class="mdi mdi-account"></i> Login</a>
       @endauth
@@ -67,30 +75,38 @@
         <div class="container-lg">
           <nav class="main-navbar d-lg-flex justify-content-between align-items-center">
             <div class="desktop-logo d-none d-lg-block">
-              <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo.svg') }}" alt="Logo"></a>
+              <a href="{{ url('/') }}">
+                <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo">
+              </a>
             </div>
             <div class="navbar-menu">
               <ul class="main-menu">
                 <li><a href="{{ url('/') }}">Inicio</a></li>
                 @auth
-          @if(auth()->user()->cliente)
-        <li><a href="{{ route('cliente.dashboard') }}">Mi Panel</a></li>
-        <li><a href="{{ route('productos.index') }}">Productos</a></li>
-        <li><a href="{{ route('carro.ver') }}">Carro</a></li>
-        <li><a href="{{ route('pedidos.index') }}">Mis Pedidos</a></li>
-      @endif
-          @if(auth()->user()->administrador)
-        <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
-        <li><a href="{{ route('admin.pedidos.index') }}">Pedidos</a></li>
-        <li><a href="{{ route('productos.index') }}">Productos</a></li>
-        <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
-      @endif
-          <li>
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="btn btn-link nav-link">Cerrar sesión</button>
-            </form>
-          </li>
+                  @php
+          $admin = $user?->administrador;
+        @endphp
+
+                  @if($cliente)
+            <li><a href="{{ route('cliente.dashboard') }}">Mi Panel</a></li>
+            <li><a href="{{ route('productos.index') }}">Productos</a></li>
+            <li><a href="{{ route('carro.ver') }}">Carro</a></li>
+            <li><a href="{{ route('pedidos.index') }}">Mis Pedidos</a></li>
+          @endif
+
+                  @if($admin)
+            <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
+            <li><a href="{{ route('admin.pedidos.index') }}">Pedidos</a></li>
+            <li><a href="{{ route('productos.index') }}">Productos</a></li>
+            <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
+          @endif
+
+                  <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-link nav-link">Cerrar sesión</button>
+                    </form>
+                  </li>
         @else
       <li><a href="{{ route('login') }}">Login</a></li>
       <li><a href="{{ route('register') }}">Registro</a></li>
