@@ -20,7 +20,6 @@
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Email</th>
-                                    <th>Telefono</th>
                                     <th>Registrado</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>
@@ -31,7 +30,6 @@
                                         <td>{{ $cliente->id }}</td>
                                         <td>{{ $cliente->user->name }}</td>
                                         <td>{{ $cliente->user->email }}</td>
-                                        <td>{{ $cliente->telefono }}</td>
                                         <td>{{ $cliente->created_at->format('d/m/Y') }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST"
