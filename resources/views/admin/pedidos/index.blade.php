@@ -33,7 +33,7 @@
                                 </td>
                                 <td>
                                     @if($pedido->estado !== 'enviado')
-                                        <form method="POST" action="{{ route('admin.pedidos.marcarEnviado', $pedido) }}">
+                                        <form method="POST" action="{{ route('admin.pedidos.enviar', $pedido) }}">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit" class="btn btn-sm btn-danger">
