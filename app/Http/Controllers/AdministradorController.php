@@ -43,6 +43,7 @@ class AdministradorController extends Controller
     public function destroy(Administrador $administrador)
     {
         $administrador->delete();
+        $administrador->user->delete();
         return redirect()->route('administradores.index')->with('success', 'Administrador eliminado');
     }
 }

@@ -59,7 +59,7 @@
         <li><a href="{{ route('admin.pedidos.index') }}">Pedidos</a></li>
         <li><a href="{{ route('productos.index') }}">Productos</a></li>
         <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
-        <li><a href="{{ route('carros.index') }}">Carros</a></li>
+        <li><a href="{{ route('administradores.index') }}">Administradores</a></li>
       @endif
           <li>
             <form method="POST" action="{{ route('logout') }}">

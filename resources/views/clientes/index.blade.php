@@ -3,10 +3,7 @@
 @section('content')
     <div class="container py-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="text-danger fw-bold">Clientes Apasionados</h2>
-            <a href="{{ route('clientes.create') }}" class="btn btn-danger">
-                <i class="bi bi-plus-lg me-1"></i> Nuevo Cliente
-            </a>
+            <h2 class="text-danger fw-bold">Tabla de Clientes</h2>
         </div>
 
         <div class="card bg-dark text-light shadow-lg border-0">
@@ -23,6 +20,7 @@
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Email</th>
+                                    <th>Telefono</th>
                                     <th>Registrado</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>
@@ -31,8 +29,9 @@
                                 @foreach($clientes as $cliente)
                                     <tr>
                                         <td>{{ $cliente->id }}</td>
-                                        <td>{{ $cliente->name }}</td>
-                                        <td>{{ $cliente->email }}</td>
+                                        <td>{{ $cliente->user->name }}</td>
+                                        <td>{{ $cliente->user->email }}</td>
+                                        <td>{{ $cliente->telefono }}</td>
                                         <td>{{ $cliente->created_at->format('d/m/Y') }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST"
