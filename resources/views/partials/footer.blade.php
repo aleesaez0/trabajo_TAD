@@ -1,5 +1,3 @@
-
-{{-- resources/views/partials/footer.blade.php --}}
 <section class="footer-style-3 pt-100 pb-100">
     <div class="container">
         <div class="footer-top">

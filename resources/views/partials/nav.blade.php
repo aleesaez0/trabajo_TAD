@@ -85,7 +85,7 @@
                 @auth
                   @php
           $admin = $user?->administrador;
-        @endphp
+          @endphp
 
                   @if($cliente)
             <li><a href="{{ route('cliente.dashboard') }}">Mi Panel</a></li>

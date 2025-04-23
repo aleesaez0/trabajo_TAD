@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <title>@yield('title', 'sexToys')</title>
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    @include('components.nav')
+    @include('partials.nav')
 
     <main>
         @yield('content')
@@ -57,4 +57,5 @@
     <script src="{{ asset('assets/js/count-up.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
+
 </html>
