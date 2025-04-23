@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-5">
-        <h2 class="mb-4 text-center text-danger">Mis Pedidos</h2>
+        <h2 class="mb-4 text-center text-danger">Gestión de Pedidos</h2>
 
         @if(session('success'))
             <div class="alert alert-success text-center">{{ session('success') }}</div>
@@ -32,9 +32,19 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <a href="{{ route('pedidos.show', $pedido) }}" class="btn btn-outline-danger btn-sm">
-                                        Ver Detalle
-                                    </a>
+                                    @if($pedido->estado !== 'enviado')
+                                        <form method="POST" action="{{ route('admin.pedidos.marcarEnviado', $pedido) }}">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                Marcar como Enviado
+                                            </button>
+                                        </form>
+                                    @else
+                                        <a href="{{ route('pedidos.show', $pedido) }}" class="btn btn-outline-secondary btn-sm">
+                                            Ver Detalle
+                                        </a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
@@ -42,7 +52,7 @@
                 </table>
             </div>
         @else
-            <div class="alert alert-warning text-center">No tienes pedidos realizados todavía.</div>
+            <div class="alert alert-warning text-center">No hay pedidos registrados.</div>
         @endif
     </div>
 @endsection

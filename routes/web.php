@@ -41,13 +41,13 @@ Route::delete('/carros/linea/{lineaCarro}', [LineaCarroController::class, 'elimi
 
 Route::post('/carro/confirmar', [CarroController::class, 'confirmarPedido'])->name('carro.confirmar');
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('admin.dashboard');
-Route::get('/admin/pedidos', [PedidosAdminController::class, 'index'])->middleware('auth')->name('admin.pedidos.index');
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/pedidos', [PedidosAdminController::class, 'index'])->name('pedidos.index');
     Route::patch('/pedidos/{pedido}/enviar', [PedidosAdminController::class, 'marcarEnviado'])->name('pedidos.enviar');
+    Route::get('/pedidos/{pedido}', [PedidosAdminController::class, 'show'])->name('pedidos.show');
 });
+
 Route::get('/pedidos/{pedido}', [PedidoController::class, 'show'])->middleware('auth')->name('pedidos.show');
 Route::get('/admin/pedidos/{pedido}', [PedidosAdminController::class, 'show'])->middleware('auth')->name('admin.pedidos.show');
 
