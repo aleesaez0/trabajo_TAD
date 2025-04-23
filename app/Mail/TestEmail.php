@@ -13,7 +13,7 @@ class TestEmail extends Mailable
 
     public function build()
     {
-        return $this->view('emails.test') // Nombre de la vista
-            ->subject('Email de prueba'); // Asunto
+        return $this->view('emails.test') 
+            ->subject('Email de prueba'); 
     }
 }

@@ -92,7 +92,7 @@ proyectotad55+usuario1@gmail.com - 12345678Usuario1
 proyectotad55+usuario2@gmail.com - 12345678Usuario2
 
 # EJECUTAR
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 
 npm run dev
 

@@ -14,10 +14,10 @@ class ProductoController extends Controller
         $productos = Producto::all();
 
         if (auth()->user()->administrador) {
-            return view('productos.index', compact('productos')); // modo tabla
+            return view('productos.index', compact('productos')); 
         }
 
-        return view('productos.catalogo', compact('productos')); // cards visuales para clientes
+        return view('productos.catalogo', compact('productos')); 
     }
 
 

@@ -82,22 +82,18 @@ class CarroController extends Controller
             return redirect()->route('carro.ver')->with('error', 'Tu carro está vacío.');
         }
 
-        // VALIDACIÓN DE STOCK
         foreach ($carro->lineas as $linea) {
             if ($linea->producto->stock < $linea->cantidad) {
                 return redirect()->route('carro.ver')->with('error', 'No hay suficiente stock para el producto: ' . $linea->producto->nombre);
             }
         }
 
-        // RESTAR STOCK
         foreach ($carro->lineas as $linea) {
             $linea->producto->decrement('stock', $linea->cantidad);
         }
 
-        // CALCULAR TOTAL
         $total = $carro->lineas->sum(fn($l) => $l->cantidad * $l->precio_unitario);
 
-        // CREAR PEDIDO
         $pedido = Pedido::create([
             'carro_id' => $carro->id,
             'total' => $total,
@@ -107,8 +103,6 @@ class CarroController extends Controller
 
         \Mail::to(auth()->user()->email)->send(new \App\Mail\PedidoConfirmado($pedido));
 
-
-        // CREAR NUEVO CARRO PARA FUTURAS COMPRAS
         Carro::create(['cliente_id' => $cliente->id]);
 
         return redirect()->route('pedidos.index')->with('success', 'Pedido confirmado con éxito.');
