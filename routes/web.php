@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test-email', function () {
-    Mail::to("proyectotad55+usuario1@gmail.com")->send(new TestEmail());
+    Mail::to("proyectotad55@gmail.com")->send(new TestEmail());
     return "Email sent";
 });
 
