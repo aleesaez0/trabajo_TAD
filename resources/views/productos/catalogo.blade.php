@@ -3,8 +3,29 @@
 @section('content')
     <div class="container py-5">
         <h2 class="mb-4 text-center">Catálogo de Productos</h2>
+
+        {{-- Filtro por categoría --}}
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <form method="GET" action="{{ route('productos.index') }}">
+                    <div class="input-group">
+                        <label class="input-group-text" for="categoria">Categoría</label>
+                        <select class="form-select" name="categoria" id="categoria" onchange="this.form.submit()">
+                            <option value="">Todas</option>
+                            @foreach ($categorias as $categoria)
+                                <option value="{{ $categoria->id }}" {{ request('categoria') == $categoria->id ? 'selected' : '' }}>
+                                    {{ $categoria->nombre }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {{-- Grid de productos --}}
         <div class="row g-4">
-            @foreach ($productos as $producto)
+            @forelse ($productos as $producto)
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         @if ($producto->imagen)
@@ -34,7 +55,9 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <p class="text-center">No hay productos disponibles en esta categoría.</p>
+            @endforelse
         </div>
     </div>
 @endsection

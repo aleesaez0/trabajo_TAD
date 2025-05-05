@@ -10,4 +10,10 @@ class Categoria extends Model
         'nombre',
     ];
 
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class);
+    }
+
+
 }

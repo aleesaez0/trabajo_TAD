@@ -20,9 +20,8 @@ class Producto extends Model
         return $this->hasMany(LineaCarro::class);
     }
 
-    public function categoria()
+    public function categorias()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsToMany(Categoria::class);
     }
-
 }

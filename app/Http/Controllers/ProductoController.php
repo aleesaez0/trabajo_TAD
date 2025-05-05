@@ -5,41 +5,61 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Categoria;
 
 class ProductoController extends Controller
 {
-
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::all();
+        $productos = Producto::with('categorias');
+        $categorias = Categoria::all();
 
+        // Si es administrador, mostrar gestión completa
         if (auth()->user()->administrador) {
-            return view('productos.index', compact('productos')); 
+            return view('productos.index', [
+                'productos' => $productos->get(),
+                'categorias' => $categorias
+            ]);
         }
 
-        return view('productos.catalogo', compact('productos')); 
-    }
+        // Si es cliente, permitir filtrar por categoría
+        if ($request->filled('categoria')) {
+            $productos->whereHas('categorias', function ($query) use ($request) {
+                $query->where('id', $request->categoria);
+            });
+        }
 
+        return view('productos.catalogo', [
+            'productos' => $productos->get(),
+            'categorias' => $categorias
+        ]);
+    }
 
     public function create()
     {
-        return view('productos.create');
+        $categorias = Categoria::all();
+        return view('productos.create', compact('categorias'));
     }
 
     public function store(Request $request)
     {
-        Producto::create($request->all());
+        $producto = Producto::create($request->except('categorias'));
+        $producto->categorias()->sync($request->input('categorias', []));
+
         return redirect()->route('productos.index')->with('success', 'Producto creado');
     }
 
     public function edit(Producto $producto)
     {
-        return view('productos.edit', compact('producto'));
+        $categorias = Categoria::all();
+        return view('productos.edit', compact('producto', 'categorias'));
     }
 
     public function update(Request $request, Producto $producto)
     {
-        $producto->update($request->all());
+        $producto->update($request->except('categorias'));
+        $producto->categorias()->sync($request->input('categorias', []));
+
         return redirect()->route('productos.index')->with('success', 'Producto actualizado');
     }
 
@@ -48,5 +68,4 @@ class ProductoController extends Controller
         $producto->delete();
         return redirect()->route('productos.index')->with('success', 'Producto eliminado');
     }
-
 }

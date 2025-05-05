@@ -17,7 +17,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 37.99,
                 'stock' => 10,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/satisfyer/27673/1693913311.stf002_13.jpg?w=320&q=90',
-                'categoria_id' => 3,
             ],
             [
                 'id' => 2,
@@ -26,7 +25,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 89.99,
                 'stock' => 8,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/mymagicwand/27826/1625143875.MMW001PNK.jpg?w=320&q=90',
-                'categoria_id' => 3,
             ],
             [
                 'id' => 3,
@@ -35,7 +33,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 69.99,
                 'stock' => 15,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/easy-choice/39067/1625152645.ET-ST-003.jpg?w=200&q=90',
-                'categoria_id' => 2,
             ],
             [
                 'id' => 4,
@@ -44,7 +41,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 59.99,
                 'stock' => 22,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/misc/66082/1686150370.cbmbt6_2.jpg?w=200&q=90',
-                'categoria_id' => 3,
             ],
             [
                 'id' => 5,
@@ -53,7 +49,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 1.99,
                 'stock' => 50,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/christine-le-duc/66701/1719823574.cld-bodychain-mask_5.jpg?w=800&q=90',
-                'categoria_id' => 4,
             ],
             [
                 'id' => 6,
@@ -62,7 +57,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 17.99,
                 'stock' => 70,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/le-desir/63394/1652775979.DES010BLKOS_4.jpg?w=800&q=90',
-                'categoria_id' => 3,
             ],
             [
                 'id' => 7,
@@ -71,7 +65,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 26.99,
                 'stock' => 20,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/airdoll/75703/1705485111.ad001_4.jpg?w=200&q=90',
-                'categoria_id' => 2,
             ],
             [
                 'id' => 8,
@@ -80,7 +73,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 69.99,
                 'stock' => 15,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/kokos/94387/1736428375.120039-beige_3.jpg?w=200&q=90',
-                'categoria_id' => 2,
             ],
             [
                 'id' => 9,
@@ -89,7 +81,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 39.99,
                 'stock' => 25,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/real-fantasy/32919/1625147460.RF013SKN.jpg?w=200&q=90',
-                'categoria_id' => 1,
             ],
             [
                 'id' => 10,
@@ -98,7 +89,6 @@ class ProductoSeeder extends Seeder
                 'precio' => 11.99,
                 'stock' => 10,
                 'imagen' => 'https://eqomcdn.com/content/photos/products/easytoys-anal-collection/25457/1625142340.ET124PNK.jpg?w=200&q=90',
-                'categoria_id' => 3,
             ],
         ]);
     }

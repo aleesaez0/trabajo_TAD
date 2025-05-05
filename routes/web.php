@@ -6,6 +6,7 @@ use App\Http\Controllers\CarroController;
 use App\Http\Controllers\LineaCarroController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ProductoCategoriaController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PedidosAdminController;
 use App\Http\Controllers\Cliente\ClienteDashboardController;
@@ -54,3 +55,7 @@ Route::get('/admin/pedidos/{pedido}', [PedidosAdminController::class, 'show'])->
 Route::get('/cliente/dashboard', [ClienteDashboardController::class, 'index'])
     ->middleware('auth')
     ->name('cliente.dashboard');
+
+Route::post('productos/{producto}/categorias', [ProductoCategoriaController::class, 'attach'])->name('productos.categorias.attach');
+Route::delete('productos/{producto}/categorias/{categoria}', [ProductoCategoriaController::class, 'detach'])->name('productos.categorias.detach');
+
