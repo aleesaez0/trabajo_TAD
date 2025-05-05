@@ -12,11 +12,17 @@ class Producto extends Model
         'precio',
         'stock',
         'imagen',
+        'categoria_id',
     ];
 
     public function lineasCarro()
     {
         return $this->hasMany(LineaCarro::class);
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
     }
 
 }
