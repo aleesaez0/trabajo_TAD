@@ -41,7 +41,7 @@
           <nav class="main-navbar d-lg-flex justify-content-between align-items-center">
             <div class="desktop-logo d-none d-lg-block">
               <a href="{{ url('/') }}">
-                <h2 class="text-danger fw-bold m-0">LujuriaShop</h2>
+                <h2 class="text-danger fw-bold m-0">sexToys</h2>
               </a>
             </div>
             <div class="navbar-menu">

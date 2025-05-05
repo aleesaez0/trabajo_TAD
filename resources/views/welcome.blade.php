@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Bienvenido a LujuriaShop')
+@section('title', 'Bienvenido a sexToys')
 
 @section('content')
 

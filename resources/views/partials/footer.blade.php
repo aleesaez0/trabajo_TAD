@@ -41,7 +41,7 @@
         </div>
 
         <div class="text-center pt-50">
-            <p class="text-muted small">&copy; {{ date('Y') }} <strong>LujuriaShop</strong>. Todos los derechos
+            <p class="text-muted small">&copy; {{ date('Y') }} <strong>sexToys</strong>. Todos los derechos
                 reservados.</p>
         </div>
     </div>

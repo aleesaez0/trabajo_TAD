@@ -22,10 +22,9 @@ class ProductoController extends Controller
             ]);
         }
 
-        // Si es cliente, permitir filtrar por categoría
         if ($request->filled('categoria')) {
             $productos->whereHas('categorias', function ($query) use ($request) {
-                $query->where('id', $request->categoria);
+                $query->where('categorias.id', $request->categoria); 
             });
         }
 

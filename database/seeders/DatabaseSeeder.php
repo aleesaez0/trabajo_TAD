@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
-use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +12,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategoriaSeeder::class,
             ProductoSeeder::class,
+            CategoriaProductoSeeder::class,
             UsuarioClienteAdminSeeder::class,
         ]);
     }
