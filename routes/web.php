@@ -59,3 +59,4 @@ Route::get('/cliente/dashboard', [ClienteDashboardController::class, 'index'])
 Route::post('productos/{producto}/categorias', [ProductoCategoriaController::class, 'attach'])->name('productos.categorias.attach');
 Route::delete('productos/{producto}/categorias/{categoria}', [ProductoCategoriaController::class, 'detach'])->name('productos.categorias.detach');
 
+Route::post('/set-locale', [UserController::class, 'setLocale'])->name('user.setLocale');

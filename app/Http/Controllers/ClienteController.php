@@ -46,4 +46,17 @@ class ClienteController extends Controller
         $cliente->user->delete();
         return redirect()->route('clientes.index')->with('success', 'Cliente eliminado');
     }
+
+    public function setLocale(Request $request)
+    {
+        $request->validate([
+            'locale' => 'required|in:en,es,fr'
+        ]);
+
+        $cliente = auth()->cliente();
+        $cliente->locale = $request->locale;
+        $cliente->save();
+        return back();
+    }
+
 }

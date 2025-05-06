@@ -4,6 +4,15 @@
     <div class="container py-5">
         <h2 class="text-center mb-4">¡Hola {{ auth()->user()->name }}!</h2>
 
+        <form method="POST" action="{{ route('user.setLocale') }}">
+            @csrf
+            <select name="locale" onchange="this.form.submit()">
+                <option value="en" {{ auth()->user()->locale == 'en' ? 'selected' : '' }}>English</option>
+                <option value="es" {{ auth()->user()->locale == 'es' ? 'selected' : '' }}>Español</option>
+                <option value="fr" {{ auth()->user()->locale == 'fr' ? 'selected' : '' }}>Français</option>
+            </select>
+        </form>
+
         <div class="row g-4 text-center">
             <div class="col-md-4">
                 <div class="card shadow-sm border-0">
