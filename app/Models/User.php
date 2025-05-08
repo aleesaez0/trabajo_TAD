@@ -36,4 +36,14 @@ class User extends Authenticatable
         return $this->hasOne(\App\Models\Administrador::class);
     }
 
+    public function favoritos()
+    {
+        return $this->belongsToMany(Producto::class, 'favoritos')->withTimestamps();
+    }
+
+    public function haMarcadoComoFavorito($productoId)
+    {
+        return $this->favoritos->contains('id', $productoId);
+    }
+
 }

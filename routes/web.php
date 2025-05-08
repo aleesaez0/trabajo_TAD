@@ -59,3 +59,11 @@ Route::get('/cliente/dashboard', [ClienteDashboardController::class, 'index'])
 Route::post('productos/{producto}/categorias', [ProductoCategoriaController::class, 'attach'])->name('productos.categorias.attach');
 Route::delete('productos/{producto}/categorias/{categoria}', [ProductoCategoriaController::class, 'detach'])->name('productos.categorias.detach');
 
+Route::post('/favoritos/{producto}', [App\Http\Controllers\FavoritoController::class, 'toggle'])
+    ->middleware('auth')->name('favoritos.toggle');
+
+Route::get('/mis-favoritos', [App\Http\Controllers\FavoritoController::class, 'misFavoritos'])
+    ->middleware('auth')
+    ->name('favoritos.mis');
+
+

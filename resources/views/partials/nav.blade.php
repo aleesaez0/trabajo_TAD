@@ -48,29 +48,32 @@
               <ul class="main-menu">
                 <li><a href="{{ url('/') }}">Inicio</a></li>
                 @auth
-          @if(auth()->user()->cliente)
-        <li><a href="{{ route('cliente.dashboard') }}">Mi Panel</a></li>
-        <li><a href="{{ route('productos.index') }}">Productos</a></li>
-        <li><a href="{{ route('carro.ver') }}">Carro</a></li>
-        <li><a href="{{ route('pedidos.index') }}">Mis Pedidos</a></li>
-      @endif
-          @if(auth()->user()->administrador)
-        <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
-        <li><a href="{{ route('admin.pedidos.index') }}">Pedidos</a></li>
-        <li><a href="{{ route('productos.index') }}">Productos</a></li>
-        <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
-        <li><a href="{{ route('administradores.index') }}">Administradores</a></li>
-      @endif
-          <li>
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="btn btn-link nav-link">Cerrar sesiÃ³n</button>
-            </form>
-          </li>
+              @if(auth()->user()->cliente)
+            <li><a href="{{ route('cliente.dashboard') }}">Mi Panel</a></li>
+            <li><a href="{{ route('productos.index') }}">Productos</a></li>
+            <li><a href="{{ route('carro.ver') }}">Carro</a></li>
+            <li><a href="{{ route('pedidos.index') }}">Mis Pedidos</a></li>
+            <li><a href="{{ route('favoritos.mis') }}"><i class="bi bi-heart-fill text-danger me-1"></i> Mis
+            Favoritos</a></li>
+          @endif
+
+              @if(auth()->user()->administrador)
+            <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
+            <li><a href="{{ route('admin.pedidos.index') }}">Pedidos</a></li>
+            <li><a href="{{ route('productos.index') }}">Productos</a></li>
+            <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
+            <li><a href="{{ route('administradores.index') }}">Administradores</a></li>
+          @endif
+              <li>
+                <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-link nav-link">Cerrar sesiÃ³n</button>
+                </form>
+              </li>
         @else
-      <li><a href="{{ route('login') }}">Login</a></li>
-      <li><a href="{{ route('register') }}">Registro</a></li>
-    @endauth
+          <li><a href="{{ route('login') }}">Login</a></li>
+          <li><a href="{{ route('register') }}">Registro</a></li>
+        @endauth
               </ul>
             </div>
           </nav>
