@@ -43,18 +43,19 @@
               <a href="{{ url('/') }}">
                 <h2 class="text-danger fw-bold m-0">sexToys</h2>
               </a>
+
             </div>
             <div class="navbar-menu">
               <ul class="main-menu">
-                <li><a href="{{ url('/') }}">Inicio</a></li>
+                <li><a href="{{ url('/') }}">{{ __('messages.inicio') }}</a></li>
                 @auth
               @if(auth()->user()->cliente)
-            <li><a href="{{ route('cliente.dashboard') }}">Mi Panel</a></li>
-            <li><a href="{{ route('productos.index') }}">Productos</a></li>
-            <li><a href="{{ route('carro.ver') }}">Carro</a></li>
-            <li><a href="{{ route('pedidos.index') }}">Mis Pedidos</a></li>
-            <li><a href="{{ route('favoritos.mis') }}"><i class="bi bi-heart-fill text-danger me-1"></i> Mis
-            Favoritos</a></li>
+            <li><a href="{{ route('cliente.dashboard') }}">{{ __('messages.mi_panel') }}</a></li>
+            <li><a href="{{ route('productos.index') }}">{{ __('messages.productos') }}</a></li>
+            <li><a href="{{ route('carro.ver') }}">{{ __('messages.carrito') }}</a></li>
+            <li><a href="{{ route('pedidos.index') }}">{{ __('messages.mis_pedidos') }}</a></li>
+            <li><a href="{{ route('favoritos.mis') }}"><i class="bi bi-heart-fill text-danger me-1"></i>
+            {{ __('messages.mis_favoritos') }}</a></li>
           @endif
 
               @if(auth()->user()->administrador)

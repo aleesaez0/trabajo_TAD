@@ -66,4 +66,14 @@ Route::get('/mis-favoritos', [App\Http\Controllers\FavoritoController::class, 'm
     ->middleware('auth')
     ->name('favoritos.mis');
 
+Route::post('/perfil/idioma', function (Illuminate\Http\Request $request) {
+    $request->validate(['locale' => 'in:es,en,fr']);
+
+    $cliente = auth()->user()->cliente;
+    $cliente->locale = $request->locale;
+    $cliente->save();
+
+    return back();
+})->middleware('auth')->name('perfil.idioma');
+
 

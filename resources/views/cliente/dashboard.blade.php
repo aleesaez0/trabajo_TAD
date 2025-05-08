@@ -5,6 +5,15 @@
         <h2 class="text-center mb-4">¡Hola {{ auth()->user()->name }}!</h2>
 
         <div class="row g-4 text-center">
+            <form method="POST" action="{{ route('perfil.idioma') }}">
+                @csrf
+                <label for="locale">Idioma:</label>
+                <select name="locale" id="locale" onchange="this.form.submit()">
+                    <option value="es" {{ auth()->user()->cliente->locale == 'es' ? 'selected' : '' }}>Español</option>
+                    <option value="en" {{ auth()->user()->cliente->locale == 'en' ? 'selected' : '' }}>English</option>
+                    <option value="fr" {{ auth()->user()->cliente->locale == 'fr' ? 'selected' : '' }}>Français</option>
+                </select>
+            </form>
             <div class="col-md-4">
                 <div class="card shadow-sm border-0">
                     <div class="card-body">

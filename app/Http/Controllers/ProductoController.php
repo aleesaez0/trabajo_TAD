@@ -14,7 +14,6 @@ class ProductoController extends Controller
         $productos = Producto::with('categorias');
         $categorias = Categoria::all();
 
-        // Si es administrador, mostrar gestión completa
         if (auth()->user()->administrador) {
             return view('productos.index', [
                 'productos' => $productos->get(),
