@@ -13,9 +13,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # 3) Copia composer.json antes para cache de build
 COPY composer.json composer.lock ./
 
-# (Ya NO instalas aquí; lo harás en runtime)
-# RUN composer install --no-autoloader --no-scripts --ignore-platform-reqs
-
 # 4) Copia entrypoint y dale permiso
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
