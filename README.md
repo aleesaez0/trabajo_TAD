@@ -93,9 +93,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 # USUARIOS
-proyectotad55+usuario1@gmail.com - 12345678Usuario1
+proyectotad55+cliente@gmail.com - cliente123
 
-proyectotad55+usuario2@gmail.com - 12345678Usuario2
+proyectotad55+admin@gmail.com - admin123
 
 # EJECUTAR
 php artisan migrate:fresh --seed

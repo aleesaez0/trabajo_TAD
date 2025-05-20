@@ -5,10 +5,12 @@ services:
     restart: unless-stopped
     volumes:
       - .:/var/www/html
+      - ./.env:/var/www/html/.env  # monta el env
     ports:
       - "8000:8000"
     environment:
-      - DB_HOST=db  
+      - DB_HOST=db
+      - DB_PORT=3306
       - DB_DATABASE=epd3-laravel
       - DB_USERNAME=jlleagar
       - DB_PASSWORD=password
